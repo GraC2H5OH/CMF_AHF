@@ -12,3 +12,5 @@
 - Production and impovement of running strategies.
 #### The article we will use
 [Forecasting crude oil prices with a large set of predictors: Can LASSO select powerful predictors?](https://sci-hub.ru/10.1016/j.jempfin.2019.08.007)
+#### Additional materials
+[The Elements of Statistical Learning Data Mining, Inference, and Prediction](https://hastie.su.domains/Papers/ESLII.pdf)
