@@ -41,7 +41,7 @@ What data do we need:
 - Macro database called FRED-MD
 
 #### Bonus
-If we have time: use the extracted features from the lasso and build neural network (for example, LSTM) and compare results. \
+If we have time: use the extracted features from the lasso and build neural network (for example, LSTM) and compare results.
 
 
 #### The article we will use
