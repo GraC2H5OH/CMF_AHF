@@ -4,7 +4,7 @@
 ## Contents:
 - [What will be done](#what-will-be-done)
 - [Proposal](#proposal)
-- Soon
+- [Data](sources)
 - Soon
 - Soon
 - [Additional materials](#additional-materials)
@@ -12,8 +12,8 @@
 ### What will be done
 - Existing strategies need to be explored first.
   - Choosing a article
-  - Writing proposal(We are here)
-  - Collecting the data used in article
+  - Writing proposal
+  - Collecting the data used in article(We are here)
 - Analyze historical data using statistical methods. 
 - Try to make some hypotheses about price patterns, market inefficiencies, etc. 
 - Defining of trading rules. 
@@ -32,7 +32,7 @@ The task of predicting crude oil prices has been and will continue to be relevan
 - See what features Lasso and ElasticNet rely on in their predictions
 - Try several windows of data (last 50%, 40%,30%, etc) for evaluating optimal Lasso and ElasticNet coefficients.
 
-#### Sources
+### Sources
 What data do we need:
 - [Spot price of West Texas Intermediate crude oil from EIA](https://www.eia.gov/dnav/pet/hist/LeafHandler.ashx?n=PET&s=RWTC&f=M)
 - [Consumer price index from FRED](https://fred.stlouisfed.org/series/CPIAUCSL)
