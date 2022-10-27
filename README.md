@@ -39,7 +39,7 @@ What data do we need:
 - Macroeconomic variables from EIA and FRED
   - [Treasury bill rate: interest rate on a three-month Treasury bill (secondary market).](https://fred.stlouisfed.org/series/DTB3)
   - [Long-term yield: long-term government bond yield.](https://fred.stlouisfed.org/series/IRLTLT01USM156N)
-  - Inflation: calculated from the U.S. CPI for all urban consumers.
+  - [Inflation: calculated from the U.S. CPI for all urban consumers](https://fred.stlouisfed.org/series/CPIAUCSL).
   - [Stock return variance: sum of squared daily returns on the S&P 500 index.](https://towardsdatascience.com/calculate-and-plot-s-p-500-daily-returns-2ce359e014d6)
   - [Economic policy uncertainty: calculated from the monthly economic policy uncertainty index for the U.S.](https://www.policyuncertainty.com/)
   - [Kilian’s index: the real global economic activity index from Kilian (2009).](https://www.dallasfed.org/research/igrea)
@@ -53,7 +53,7 @@ What data do we need:
   - [Capacity utilization: the capacity utilization for manufacturing.](https://fred.stlouisfed.org/series/MCUMFN)
 
 - [The U.S. refiner’s acquisition cost for crude oil imports (RAC) from EIA](https://www.eia.gov/dnav/pet/pet_pri_rac2_dcu_nus_m.htm)
-- Macro database called FRED-MD
+- [Macro database called FRED-MD](https://research.stlouisfed.org/econ/mccracken/fred-databases/)
 
 #### Bonus
 If we have time: use the extracted features from the lasso and build neural network (for example, LSTM) and compare results.
