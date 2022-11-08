@@ -5,7 +5,7 @@
 - [What will be done](#what-will-be-done)
 - [Proposal](#proposal)
 - [Data](#sources)
-- Soon
+- [Article Pipeline](#article-pipeline)
 - Soon
 - [Additional materials](#additional-materials)
 
@@ -55,6 +55,30 @@ What data do we need:
 - [The U.S. refiner’s acquisition cost for crude oil imports (RAC) from EIA](https://www.eia.gov/dnav/pet/pet_pri_rac2_dcu_nus_m.htm)
 - [Macro database called FRED-MD](https://research.stlouisfed.org/econ/mccracken/fred-databases/)
 
+### Article Pipeline
+#### How we fit and evaluate the models?
+1)Fit on a train dataset
+
+2)Evaluate on a out-of-sample dataset
+
+Why we want to use out-of-sample dataset? Because out-of-sample test avoids the in-sample over-fitting issue and is more relevant for assessing
+genuine return predictability in real time. To avoid the look-ahead bias, we should only use the information available up to 𝑡 to
+generate the out-of-sample forecast at 𝑡+1
+#### What metrics we will use?
+1)<strong>R<sup>2</sup><sub>OS</sub></strong> = <strong>1 - <sup>MSPE<sub>M</sub></sup>&frasl;<sub>MSPE<sub>B</sub></sub></strong>
+
+Where <strong>MSPE<sub>M</sub> = <sup>1</sup>&frasl;<sub>q</sub>*Σ<sup>q</sup><sub>i=1</sub>(r<sub>m+i</sub>-&#345;<sub>m+i</sub>)<sup>2</sup></strong> denotes the mean squared prediction error (MSPE) of the forecasting model of interest
+
+And <strong>MSPE<sub>B</sub> = <sup>1</sup>&frasl;<sub>q</sub>*Σ<sup>q</sup><sub>i=1</sub>(r<sub>m+i</sub>-&#345;<sub>B,m+i</sub>)<sup>2</sup></strong> denotes the MSPE of the benchmark model
+
+<strong>r<sub>m+i</sub>, ̂&#345;<sub>m+i</sub>, and ̂&#345;<sub>B,m+i</sub></strong> are the actual oil return, the oil
+return predicted by the forecasting models, and the benchmark forecast, respectively, at month m+i, and m and q
+are the length of the in-sample estimation period and the out-of-sample evaluation period, respectively.
+
+This is R<sup>2</sup> statistic but for out-of-sample dataset
+
+2) Success ratio
+
 #### Bonus
 If we have time: use the extracted features from the lasso and build neural network (for example, LSTM) and compare results.
 
@@ -63,3 +87,5 @@ If we have time: use the extracted features from the lasso and build neural netw
 [Forecasting crude oil prices with a large set of predictors: Can LASSO select powerful predictors?](https://sci-hub.ru/10.1016/j.jempfin.2019.08.007)
 #### Additional materials
 [The Elements of Statistical Learning Data Mining, Inference, and Prediction](https://hastie.su.domains/Papers/ESLII.pdf)
+
+
