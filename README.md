@@ -57,19 +57,18 @@ What data do we need:
 
 ### Article Pipeline
 #### How we fit and evaluate the models?
-1)Fit on a train dataset
-
-2)Evaluate on a out-of-sample dataset
+1) Fit on a train dataset
+2) Evaluate on a out-of-sample dataset
 
 Why we want to use out-of-sample dataset? Because out-of-sample test avoids the in-sample over-fitting issue and is more relevant for assessing
 genuine return predictability in real time. To avoid the look-ahead bias, we should only use the information available up to 𝑡 to
 generate the out-of-sample forecast at 𝑡+1
 #### What metrics we will use?
-1)<strong>R<sup>2</sup><sub>OS</sub></strong> = <strong>1 - <sup>MSPE<sub>M</sub></sup>&frasl;<sub>MSPE<sub>B</sub></sub></strong>
+1) <strong>R<sup>2</sup><sub>OS</sub></strong> = <strong>1 - <sup>MSPE<sub>M</sub></sup>&frasl;<sub>MSPE<sub>B</sub></sub></strong>
 
 Where <strong>MSPE<sub>M</sub> = <sup>1</sup>&frasl;<sub>q</sub>*Σ<sup>q</sup><sub>i=1</sub>(r<sub>m+i</sub>-&#345;<sub>m+i</sub>)<sup>2</sup></strong> denotes the mean squared prediction error (MSPE) of the forecasting model of interest
 
-And <strong>MSPE<sub>B</sub> = <sup>1</sup>&frasl;<sub>q</sub>*Σ<sup>q</sup><sub>i=1</sub>(r<sub>m+i</sub>-&#345;<sub>B,m+i</sub>)<sup>2</sup></strong> denotes the MSPE of the benchmark model
+And <strong>MSPE<sub>B</sub> = <sup>1</sup>&frasl;<sub>q</sub>*Σ<sup>q</sup><sub>i=1</sub>(r<sub>m+i</sub>-&#345;<sub>B,m+i</sub>)<sup>2</sup></strong> denotes the MSPE of the benchmark model(Historical average)
 
 <strong>r<sub>m+i</sub>, ̂&#345;<sub>m+i</sub>, and ̂&#345;<sub>B,m+i</sub></strong> are the actual oil return, the oil
 return predicted by the forecasting models, and the benchmark forecast, respectively, at month m+i, and m and q
@@ -78,6 +77,24 @@ are the length of the in-sample estimation period and the out-of-sample evaluati
 This is R<sup>2</sup> statistic but for out-of-sample dataset
 
 2) Success ratio
+
+#### Pipeline
+We always fit our models on data from January 2 1997 to March 31 2021.
+out-of-sample dataset starting from January 1 2012 and to the end(March 31, 2021), in one point validation will begin earlier
+We always study on the entire dataset(macro features and technical features) unless otherwise written
+
+1) Fitting and validation, nothing different from the default parameters
+2) Fitting with feature selection, ElasticNet selects features for ElasticNet, Lasso selects features for Lasso, we look at non-zero coefficients (we first fit and look at coefficients, and then we fit using features with non-zero coefficients)
+3) Fitting when two sets of features(macro and technical) are used separately
+4) Fitting with economic constraints. An economic constraint that a rational investor will rule out a negative stock return forecast and therefore set the forecast to zero whenever it is negative
+5) Fit and check metrics on out-of-sample high- and low-sentiment periods
+6) Fit using five different window sizes (30%, 35%, 40%, 45%, and 50% of estimation sample) to estimate LASSO parameters  
+7) FIt ElasticNet and Lasso with a fixed number of selected predictors. Аnd we also use a different value of the alpha parameter(0.3, 0.5, 0.7) for ElasticNet
+8) TBA
+9) Out-of-sample dataset now starts from 2007 
+10) In this subsection, we will further consider another prevailing indicator of crude oil prices, namely, the cost of the purchase of crude oil imports by an American oil refining company (hereinafter referred to as RAC). Out-of-sample dataset now starts again from January 2001
+11) Forecasting nominal prices of crude oil and RAC
+12) Fitting using FRED
 
 #### Bonus
 If we have time: use the extracted features from the lasso and build neural network (for example, LSTM) and compare results.
