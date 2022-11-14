@@ -80,7 +80,7 @@ This is R<sup>2</sup> statistic but for out-of-sample dataset
 
 #### Pipeline
 We always fit our models on data from January 2 1997 to March 31 2021.
-out-of-sample dataset starting from January 1 2012 and to the end(March 31, 2021), in one point validation will begin earlier
+out-of-sample dataset starting from January 3 2012 and to the end(March 31, 2021), in one point validation will begin earlier
 We always study on the entire dataset(macro features and technical features) unless otherwise written
 
 1) Fitting and validation, nothing different from the default parameters
