@@ -98,7 +98,7 @@ We always study on the entire dataset(macro features and technical features) unl
 
 ### Model results
 
-| Pipeline points  | R<sub>2</sub>| MSE    |
+| Pipeline points  | R<sup>2</sup>| MSE    |
 |------------------|--------------|--------|
 |1.Lasso           |-18.76        |3463    |
 |1.ElasticNet      |-16.85        |3128    |
