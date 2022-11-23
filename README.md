@@ -100,14 +100,16 @@ We always study on the entire dataset(macro features and technical features) unl
 
 | Pipeline points  | R<sup>2</sup>| MSE    |
 |------------------|--------------|--------|
-|1.Lasso           |-18.76        |3463    |
-|1.ElasticNet      |-16.85        |3128    |
-|2.Lasso           |-18.68        |3449    |
-|2.ElasticNet      |-16.86        |3131    |
-|3.Lasso Macro     |-18.76        |3463    |
-|3.ElasticNet Macro|-16.82        |3123    |
-|3.Lasso tech      |-0.86         |327     |
-|3.ElasticNet tech |-0.86         |326     |
+|1.Lasso           |-20.15        |3554    |
+|1.ElasticNet      |-18.84        |3333    |
+|2.Lasso           |-20.25        |3570    |
+|2.ElasticNet      |-18.89        |3342    |
+|3.Lasso Macro     |-20.15        |3554    |
+|3.ElasticNet Macro|-18.78        |3324    |
+|3.Lasso tech      |-1.33         |392     |
+|3.ElasticNet tech |-1.34         |394     |
+|4.Lasso           |-0.002        |0.04    |
+|4.ElasticNet      |-0.002        |0.04    |
 
 
 
