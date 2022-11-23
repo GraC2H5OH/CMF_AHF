@@ -6,7 +6,7 @@
 - [Proposal](#proposal)
 - [Data](#sources)
 - [Article Pipeline](#article-pipeline)
-- Soon
+- [Model results](#model-results)
 - [Additional materials](#additional-materials)
 
 ### What will be done
@@ -79,8 +79,8 @@ This is R<sup>2</sup> statistic but for out-of-sample dataset
 2) Success ratio
 
 #### Pipeline
-We always fit our models on data from January 2 1997 to March 31 2021.
-out-of-sample dataset starting from January 3 2012 and to the end(March 31, 2021), in one point validation will begin earlier
+We always fit our models on data from January 2 1997 to February 28 2020.
+out-of-sample dataset starting from March 3 2020 and to the end(March 31, 2021), in one point validation will begin earlier
 We always study on the entire dataset(macro features and technical features) unless otherwise written
 
 1) Fitting and validation, nothing different from the default parameters
@@ -91,10 +91,25 @@ We always study on the entire dataset(macro features and technical features) unl
 6) Fit using five different window sizes (30%, 35%, 40%, 45%, and 50% of estimation sample) to estimate LASSO parameters  
 7) FIt ElasticNet and Lasso with a fixed number of selected predictors. Аnd we also use a different value of the alpha parameter(0.3, 0.5, 0.7) for ElasticNet
 8) TBA
-9) Out-of-sample dataset now starts from 2007 
-10) In this subsection, we will further consider another prevailing indicator of crude oil prices, namely, the cost of the purchase of crude oil imports by an American oil refining company (hereinafter referred to as RAC). Out-of-sample dataset now starts again from January 2001
+9) Out-of-sample dataset now starts from 2007(To be fixed)
+10) In this subsection, we will further consider another prevailing indicator of crude oil prices, namely, the cost of the purchase of crude oil imports by an American oil refining company (hereinafter referred to as RAC). Out-of-sample dataset now starts again from March 3 2020
 11) Forecasting nominal prices of crude oil and RAC
 12) Fitting using FRED
+
+### Model results
+
+| Pipeline points  | R<sub>2</sub>| MSE    |
+|------------------|--------------|--------|
+|1.Lasso           |-18.76        |3463    |
+|1.ElasticNet      |-16.85        |3128    |
+|2.Lasso           |-18.68        |3449    |
+|2.ElasticNet      |-16.86        |3131    |
+|3.Lasso Macro     |-18.76        |3463    |
+|3.ElasticNet Macro|-16.82        |3123    |
+|3.Lasso tech      |-0.86         |327     |
+|3.ElasticNet tech |-0.86         |326     |
+
+
 
 #### Bonus
 If we have time: use the extracted features from the lasso and build neural network (for example, LSTM) and compare results.
